@@ -1,0 +1,55 @@
+{
+  "type": "native",
+  "devices": ["J7"],
+  "replications": 1,
+  "duration": 60000,
+  "adb_path":"/Users/flora/Library/Android/sdk/platform-tools/adb",
+  "monkeyrunner_path": "/Users/flora/Library/Android/sdk/tools/bin/monkeyrunner",
+  "systrace_path": "/Users/flora/Library/Android/sdk/platform-tools/systrace/systrace.py",
+  "powerprofile_path": "android-runner-master/examples/batterystats/Scripts/power_profile.xml",
+  "paths": [
+ 
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.drawallocation.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.drawallocation.apk",
+
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.usevalueof2.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.usevalueof2.apk",
+
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.handlerleak3.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.handlerleak3.apk",
+
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.floatmath_withlint.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.floatmath2.apk",
+
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.viewholder4.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.viewholder4.apk",
+
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.recycle2.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.recycle2.apk",
+
+       "android-runner-master/examples/batterystats/final/apks/With_lint/com.example.usesparsearrays2.apk",
+       "android-runner-master/examples/batterystats/final/apks/Without_lint/com.example.usesparsearrays2.apk"
+
+  ],
+  "profilers": {
+    "batterystats": {
+      "cleanup": true
+    }
+  },
+  "scripts": {
+    "before_experiment": "Scripts/before_experiment.py",
+    "before_run": "Scripts/before_run.py",
+    "after_launch": "Scripts/after_launch.py",
+    "interaction": [
+      {
+        "type": "python2",
+        "path": "Scripts/interaction.py",
+        "logcat_regex": "DIFFERENCE"
+      }
+    ],
+    "before_close": "Scripts/before_close.py",
+    "after_run": "Scripts/after_run.py",
+    "after_experiment": "Scripts/after_experiment.py"
+  },
+  "time_between_run": 120000
+}
