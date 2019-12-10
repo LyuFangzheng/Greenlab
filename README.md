@@ -1,5 +1,6 @@
 # Greenlab
-Android Lint Projects to perform the experiment and the result of data analysis
+
+### Android Lint Projects to perform the experiment and the result of data analysis
 
 To replicate the experiment:
 
@@ -13,3 +14,10 @@ To replicate the experiment:
 
 PS:
 For most of the lint issues (except FloatMath), we wrote the code with or without lint inside a single project, but commented one when inspect the code and generate the .apk files. And for FloatMath, since it requires different gradle version and compileSdkVersion, we wrote the projects seperately.
+
+### The script to preprocess the experiment data & the final preprocessed data is in 'data_preprocessing' folder (Library: pandas )
+To use the program: python preprocess.py 'experiment result path' 'extract data path' 'preprocess path' 'output file path'
+The final result is in '/data_preprocessing/Merged/result.csv'
+
+### About the Data analysis using R:
+In result analysis folder, we contained "test.R" for analyzing the collecting data by R studio. This script included all the used functions seperately. Details about the models that we analyzed in this script have been addressed in the report.
